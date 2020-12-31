@@ -1,6 +1,6 @@
 const express = require('express')
 
-const port = 5050
+const port = 5051
 
 const Dash = require('dash');
 
@@ -19,13 +19,15 @@ const clientOpts = {
     network: 'evonet',
     dapiAddresses: ['54.184.71.154:3000'],
     wallet: {
-        mnemonic: "runway squeeze away eternal hope slice fatal tooth color alert bird upper"
+        mnemonic: "brother crucial shell now educate side ocean access slam crouch floor dove"
     }
 };
 
 async function init() {
     client = new Dash.Client(clientOpts);
+    console.log('syncing to evonet....');
     account = await client.wallet.getAccount();
+    console.log('sync complete')
 }
 
 async function getDrip(amount, toAddress) {
